@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav> <center><br><img src='sbi.png' height="150px"></nav><hr><br></center>
+    
+    <center> <form id="form">
+    <label for="username">User-ID:-</label>
+    <input type="text" id="username" placeholder="Enter your Unique ID"><br><br>
+    <label for="Pin">Pin:-</label>
+    <input type="password" id="pin"  placeholder="Enter your Pin 4-digit" minlength="4" maxlength="6"><br><hr>
+    </form>
+    <button onclick="user()" id="btn" type="submit">Submit</button><hr>
+
+</center>
+<script>
+    database=[{user:"urvi",pin:"1234"},{user:"namrata",pin:"12345"}]
+    
+
+    function atm(){
+
+    }
+    function user()
+    {
+       let username= document.getElementById("username").value
+       let pincode= document.getElementById("pin").value
+
+        var user=database.filter(x => {
+            if(x.user==username && x.pin==pincode) {
+                return x
+                
+            }  
+        })
+
+        if(user.length>0){
+            window.location.href= "http://127.0.0.1:5500/Desktop/atm.html"
+        }
+        else{
+            alert("Invalid Input")
+        }
+
+        }
+    
+    
+</script>
+
+
+</body>
+</html>
